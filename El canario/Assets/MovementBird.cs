@@ -24,4 +24,5 @@ public class MovementBird : MonoBehaviour
         m_Transform.position += dir * Time.deltaTime * 10;
         elapsedTime++;
     }
+    //hola
 }
