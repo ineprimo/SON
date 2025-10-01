@@ -16,7 +16,7 @@ public class movement : MonoBehaviour
     void Update()
     {
         Vector3 movePos = new Vector3(moveInput.x, 0, moveInput.y);
-        characterController.Move(movePos * Time.deltaTime * 2);
+        characterController.Move(movePos * Time.deltaTime * 5);
     }
 
     public void OnMove(InputAction.CallbackContext context)
