@@ -226,7 +226,7 @@ Transform:
   m_GameObject: {fileID: 79196763}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.646397, y: 0.2, z: -10.805798}
+  m_LocalPosition: {x: 0.12, y: 0.2, z: -10.805798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -466,6 +466,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7a106244-b76f-468f-bc3a-7aeb6c7f12c9
     m_ActionName: 'Player/Volume Down[/Keyboard/0]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 79196770}
+        m_TargetAssemblyTypeName: VolumeControler, Assembly-CSharp
+        m_MethodName: fadeOut
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c259f037-304c-46f7-9533-a4ccfe91dcd0
+    m_ActionName: Player/Fade Out
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
@@ -484,6 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vol: 0.05
+  time: 2
 --- !u!1 &197429008
 GameObject:
   m_ObjectHideFlags: 0
