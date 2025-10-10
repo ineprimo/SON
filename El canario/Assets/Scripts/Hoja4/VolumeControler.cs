@@ -63,13 +63,22 @@ public class VolumeControler : MonoBehaviour
 
         while (currentTime < time)
         {
-            Debug.Log("Baja el volumen");
+            Debug.Log("Sube el volumen");
             currentTime += Time.deltaTime;
             //El 0 es el volumen al que queremos llegar podríamos hacer una variable
-            //source.volume = Mathf.Lerp(start, goal, currentTime / time);
-            source.volume = (float) Math.Sqrt((double)currentTime / (double)time );
+            float a = (float)Math.Sqrt(currentTime /time);
+            if(float.IsNaN(a)) {
+                source.volume = 1;
+            }
+            else {
+                source.volume = Mathf.Lerp(start, goal, a); 
+            }
+            //source.volume = (float) Math.Sqrt((double)currentTime / (double)time );
+
+            // 
             yield return null;
         }
+
 
         yield return null;
     }
@@ -83,21 +92,31 @@ public class VolumeControler : MonoBehaviour
         {
             Debug.Log("Baja el volumen");
             currentTime += Time.deltaTime;
-            //El 0 es el volumen al que queremos llegar podríamos hacer una variable
-            //source.volume = Mathf.Lerp(start, goal, currentTime / time);
-            source.volume = (float)Math.Sqrt(((double) time - (double)currentTime) / (double)time);
+            float a = (float)Math.Sqrt((time - currentTime) /time);
+            Debug.Log(" a " +a);
+            if (float.IsNaN(a)) {
+                source.volume = 0;
+            }
+            else {
+                //El 0 es el volumen al que queremos llegar podríamos hacer una variable
+                source.volume = 1 - Mathf.Lerp(start, goal, a);
+            }
+            //source.volume = (float)Math.Sqrt(((double) time - (double)currentTime) / (double)time);
+            //source.volume = 0;
+
             yield return null;
         }
 
+        
         yield return null;
     }
 
     public IEnumerator AudioFade()
     {
         canFade = false;
-        StartCoroutine(FadeIn(act, time, 0));
+        StartCoroutine(FadeOut(act, time, 0));
         changeSong();
-        yield return StartCoroutine(FadeOut(act, time, 1));
+        yield return StartCoroutine(FadeIn(act, time, 1));
         canFade = true;
 
     }
