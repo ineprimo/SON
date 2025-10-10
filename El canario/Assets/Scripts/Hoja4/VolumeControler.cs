@@ -57,25 +57,21 @@ public class VolumeControler : MonoBehaviour
 
     public static IEnumerator FadeIn(AudioSource source, float time, float goal)
     {
-        Debug.Log("Inicia rutina");
         float currentTime = 0;
         float start = source.volume;
 
         while (currentTime < time)
         {
-            Debug.Log("Sube el volumen");
             currentTime += Time.deltaTime;
-            //El 0 es el volumen al que queremos llegar podríamos hacer una variable
+            // formula del equal power cross fade in
             float a = (float)Math.Sqrt(currentTime /time);
-            if(float.IsNaN(a)) {
+            // chequeamos si sale NaN porque si no peta, cuando haya llegado a NaN 100% ya esta en el valor final asi que lo setteamos sin mas
+            if (float.IsNaN(a)) {
                 source.volume = 1;
             }
             else {
                 source.volume = Mathf.Lerp(start, goal, a); 
             }
-            //source.volume = (float) Math.Sqrt((double)currentTime / (double)time );
-
-            // 
             yield return null;
         }
 
@@ -84,26 +80,21 @@ public class VolumeControler : MonoBehaviour
     }
     public static IEnumerator FadeOut(AudioSource source, float time, float goal)
     {
-        Debug.Log("Inicia rutina");
         float currentTime = 0;
         float start = source.volume;
 
         while (currentTime < time)
         {
-            Debug.Log("Baja el volumen");
             currentTime += Time.deltaTime;
+            // formula del equal power cross fade out
             float a = (float)Math.Sqrt((time - currentTime) /time);
-            Debug.Log(" a " +a);
+            // chequeamos si sale NaN porque si no peta, cuando haya llegado a NaN 100% ya esta en el valor final asi que lo setteamos sin mas
             if (float.IsNaN(a)) {
                 source.volume = 0;
             }
             else {
-                //El 0 es el volumen al que queremos llegar podríamos hacer una variable
                 source.volume = 1 - Mathf.Lerp(start, goal, a);
             }
-            //source.volume = (float)Math.Sqrt(((double) time - (double)currentTime) / (double)time);
-            //source.volume = 0;
-
             yield return null;
         }
 
