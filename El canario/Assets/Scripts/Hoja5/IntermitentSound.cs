@@ -55,7 +55,6 @@ public class IntermitentSound : MonoBehaviour {
     {
         //Busca un audioSource que esté !playing y le damos el source
         int i = 0;
-        Debug.Log(channels[i]);
         while (i < polyphony && channels[i].isPlaying) i++;
 
         if (i < polyphony)
@@ -64,22 +63,38 @@ public class IntermitentSound : MonoBehaviour {
             _Speaker01 = channels[i];
         }
         else _Speaker01.clip = null;
-        
+
+        Debug.Log("Elegido el canal " + i);
     }
 
-    public void Play(InputAction.CallbackContext context)
+    //public void Play(InputAction.CallbackContext context)
+    //{
+    //    if (!enablePlayMode)
+    //    {
+    //        Debug.Log("NotPlaying");
+    //        enablePlayMode = true;
+    //        StartCoroutine(Waitforit(channels[0]));
+    //    }
+    //}
+
+    public void Play()
     {
         if (!enablePlayMode)
         {
             Debug.Log("NotPlaying");
             enablePlayMode = true;
-            //StartCoroutine("Waitforit");
-            //for (int i = 0; i < polyphony; i++)
-                StartCoroutine(Waitforit(channels[0]));
+            StartCoroutine(Waitforit(channels[0]));
         }
     }
 
-    public void Stop(InputAction.CallbackContext context)
+    //public void Stop(InputAction.CallbackContext context)
+    //{
+    //    Debug.Log("Playing");
+    //    if (enablePlayMode)
+    //        StopSound();
+    //}
+
+    public void Stop()
     {
         Debug.Log("Playing");
         if (enablePlayMode)
