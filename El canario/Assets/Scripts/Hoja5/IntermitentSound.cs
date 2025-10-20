@@ -33,11 +33,13 @@ public class IntermitentSound : MonoBehaviour {
 
     void Start() {
         channels = new AudioSource[polyphony];
+        SourceVol = 0.5f;
         for ( int i = 0; i < polyphony; i++)
         {
             channels[i] = gameObject.AddComponent<AudioSource>();
             channels[i].playOnAwake = false;
             channels[i].loop = false;
+            channels[i].volume = 1f;
         }
         _Speaker01.playOnAwake = false;
         _Speaker01.loop = false;
