@@ -3,9 +3,7 @@
 // '2' lo para
 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 public class IntermitentSound : MonoBehaviour {
@@ -21,6 +19,8 @@ public class IntermitentSound : MonoBehaviour {
     public float spatialBlend;
     public AudioClip[] pcmData;
     public bool enablePlayMode;
+
+
 
     [SerializeField]
     public int polyphony = 4;   //Numero de canales/sources
@@ -100,8 +100,6 @@ public class IntermitentSound : MonoBehaviour {
         if (enablePlayMode)
             StopSound();
     }
-
-
 
     IEnumerator Waitforit(AudioSource source) {
         // tiempo de espera aleatorio en el intervalo [minTime,maxTime]
