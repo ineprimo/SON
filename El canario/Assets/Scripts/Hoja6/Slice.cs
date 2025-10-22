@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -78,11 +79,9 @@ public class SchedEvent: MonoBehaviour {
 
             for (int i = 0; i < samples.Length; i++)
             {
-                Debug.Log(i);
-                Debug.Log(samples[i]);
-                Debug.Log(Mathf.Lerp(1, 0, sR * lap));
-                samples[i] *= Mathf.Lerp(1, 0, sR * lap);
-                Debug.Log(samples[i]);
+                ///Debug.Log(Mathf.Lerp(0, 1, (float) sR * lap));
+                samples[i] *= Mathf.Lerp(1, 0, (float) sR * lap);
+                
             }
 
             clip.SetData(samples, 0);
