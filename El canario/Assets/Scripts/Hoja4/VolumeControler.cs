@@ -54,6 +54,14 @@ public class VolumeControler : MonoBehaviour
         }
 
     }
+    public void fadeOut(AudioSource a1, AudioSource a2)
+    {
+        if (canFade)
+        {
+            StartCoroutine(AudioFade());
+        }
+
+    }
 
     public static IEnumerator FadeIn(AudioSource source, float time, float goal)
     {
@@ -111,10 +119,24 @@ public class VolumeControler : MonoBehaviour
         canFade = true;
 
     }
+
+    public IEnumerator AudioFade(AudioSource a1, AudioSource a2)
+    {
+        canFade = false;
+        StartCoroutine(FadeOut(act, time, 0));
+        changeSong(a1, a2);
+        yield return StartCoroutine(FadeIn(act, time, 1));
+        canFade = true;
+
+    }
     
 
     void changeSong()
     { 
+        act = source[UnityEngine.Random.Range(0, source.Length)];
+    }
+    void changeSong(AudioSource a1, AudioSource a2)
+    {
         act = source[UnityEngine.Random.Range(0, source.Length)];
     }
 
