@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.Collections;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static Unity.VisualScripting.Member;
@@ -27,8 +28,27 @@ public class SchedEvent: MonoBehaviour {
     }
 
     void Start(){
-        FadeOut();
-        FadeIn();
+
+        foreach (AudioClip clip in pcmDataTails)
+        {
+            if (clip.channels > 1)
+            {
+                Debug.LogError("El clip " + clip.name + " no es mono");
+            } 
+            else
+               FadeIn(clip);
+        }
+        foreach (AudioClip clip in pcmDataHeads)
+        {
+            if (clip.channels > 1)
+            {
+                Debug.LogError("El clip " + clip.name + " no es mono");
+            }
+            //else 
+                //FadeOut(clip);
+        }
+
+
     }
 
     // Update is called once per frame
@@ -45,48 +65,60 @@ public class SchedEvent: MonoBehaviour {
         double clipLength = (double)head.clip.samples / head.pitch;
 
         int sRATE = AudioSettings.outputSampleRate;
-        Debug.Log($"head {h} length {clipLength}  p tail {t}  sRATE: {sRATE}");
+        //Debug.Log($"head {h} length {clipLength}  p tail {t}  sRATE: {sRATE}");
 
         head.Play();
         tail.PlayScheduled(AudioSettings.dspTime + clipLength / sRATE);
     }
 
-    private void FadeIn()
+
+    private void FadeIn(AudioClip clip)
     {
-        foreach (AudioClip clip in pcmDataTails)
+        //
+        float[] samples = new float[clip.samples];
+        clip.GetData(samples, 0);
+
+        //
+        int lapSamples = (int)(clip.frequency * lap);   // tiempo total en samples (samples totales del fade in)
+        float time = 0;                                 // current time relativo a samples (sample actual)
+
+        for (int i = 0; i < lapSamples; i++)
         {
-            int sR = clip.frequency;
+            float a = samples[i];
+            samples[i] = samples[i] * Mathf.Sqrt(time/lapSamples);
+            time += lap / lapSamples;   // current time relativo a samples
+            //Debug.Log("before : " + a + " || after: " + samples[i]);
 
-            float[] samples = new float[clip.samples];
-            clip.GetData(samples, 0);
-
-
-            for (int i = 0; i < samples.Length; i++)
-            {
-                samples[i] *= Mathf.Lerp(0, 1, sR*lap);
-            }
         }
+
+        clip.SetData(samples, 0);
+
     }
 
-    private void FadeOut()
+    private void FadeOut(AudioClip clip)
     {
-        foreach (AudioClip clip in pcmDataHeads)
+        //
+        float[] samples = new float[clip.samples];
+        clip.GetData(samples, 0);
+
+        //
+        int lapSamples = (int)(clip.frequency * lap);   // tiempo total en samples (samples totales del fade out)
+        float time = 0;                                 // current time relativo a samples (sample actual)
+
+        // float a = (float)Math.Sqrt((time - currentTime) /time);
+
+        for (int i = 0; i < lapSamples; i++)
         {
-            int sR = clip.frequency;
+            float a = samples[i];
+            samples[i] = samples[i] * Mathf.Sqrt((lapSamples - time)/lapSamples);
+            time += lap / lapSamples;   // current time relativo a samples
+            //Debug.Log("before : " + a + " || after: " + samples[i]);
 
-            float[] samples = new float[clip.samples];
-            clip.GetData(samples, 0);
-
-            for (int i = 0; i < samples.Length; i++)
-            {
-                ///Debug.Log(Mathf.Lerp(0, 1, (float) sR * lap));
-                samples[i] *= Mathf.Lerp(1, 0, (float) sR * lap);
-                
-            }
-
-            clip.SetData(samples, 0);
         }
+
+        clip.SetData(samples, 0);
+
     }
-  
+
 
 }
