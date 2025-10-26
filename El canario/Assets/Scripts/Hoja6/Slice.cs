@@ -31,21 +31,17 @@ public class SchedEvent: MonoBehaviour {
 
         foreach (AudioClip clip in pcmDataTails)
         {
-            if (clip.channels > 1)
-            {
-                Debug.LogError("El clip " + clip.name + " no es mono");
-            } 
+            if (clip.channels == 1)
+                FadeIn(clip);
             else
-               FadeIn(clip);
+                Debug.LogError("El clip " + clip.name + " no es mono");
         }
         foreach (AudioClip clip in pcmDataHeads)
         {
-            if (clip.channels > 1)
-            {
+            if (clip.channels == 1)
+                FadeOut(clip);
+            else
                 Debug.LogError("El clip " + clip.name + " no es mono");
-            }
-            //else 
-                //FadeOut(clip);
         }
 
 
@@ -105,15 +101,11 @@ public class SchedEvent: MonoBehaviour {
         int lapSamples = (int)(clip.frequency * lap);   // tiempo total en samples (samples totales del fade out)
         float time = 0;                                 // current time relativo a samples (sample actual)
 
-        // float a = (float)Math.Sqrt((time - currentTime) /time);
-
         for (int i = 0; i < lapSamples; i++)
         {
-            float a = samples[i];
-            samples[i] = samples[i] * Mathf.Sqrt((lapSamples - time)/lapSamples);
-            time += lap / lapSamples;   // current time relativo a samples
-            //Debug.Log("before : " + a + " || after: " + samples[i]);
-
+            int ic = (samples.Length - lapSamples) + i;
+            samples[ic] = samples[ic] * Mathf.Sqrt((lapSamples - time)/lapSamples);
+            time += lap / lapSamples;                   // current time relativo a samples
         }
 
         clip.SetData(samples, 0);
