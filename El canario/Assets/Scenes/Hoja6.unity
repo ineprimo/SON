@@ -723,7 +723,7 @@ MonoBehaviour:
   pcmDataTails:
   - {fileID: 8300000, guid: f409fbcd0f9fc264b9c5ed723cec5233, type: 3}
   - {fileID: 8300000, guid: 7346dd3fb65ba394396f81abd8c0d854, type: 3}
-  lap: 0.5
+  lap: 0.01
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
