@@ -97,13 +97,14 @@ public class SchedEvent: MonoBehaviour {
 
         float[] samples = new float[totalSamples];
         clip.GetData(samples, 0);
-
+        int time = 0;
        
         for (int i = 0; i < lapSamples; i++)
         {
             Debug.Log(samples[i]);
-            float t = (i + 1) / (float)lapSamples;
+            float t = time / (float)lapSamples;
             samples[i] = samples[i] * Mathf.Sqrt(t);
+            t++;
             Debug.Log(samples[i]);
         }
 
@@ -117,16 +118,18 @@ public class SchedEvent: MonoBehaviour {
         int totalsamples = clip.samples;
         int lapSamples = Mathf.Clamp((int)(clip.frequency * lap), 1, totalsamples - 1); ;
 
+
         float[] samples = new float[totalsamples];
         clip.GetData(samples, 0);   //Cogemos los samples
-
+        int time = 0;
 
         //Aplicamos fadeOut
         int start = totalsamples - lapSamples;  
         for (int i = 0; i < lapSamples; i++)
         {
             float t = (i + 1) / (float)lapSamples;
-            samples[start + i] = samples[start + i] * Mathf.Sqrt(1.0f - t);
+            samples[start + i] = samples[start + i] * Mathf.Sqrt((lapSamples - time)/lapSamples);
+            time++;
         }
 
         clip.SetData(samples, 0);
