@@ -93,19 +93,16 @@ public class SchedEvent: MonoBehaviour {
     {
         //
         int totalSamples = clip.samples;
-        int lapSamples = Mathf.Clamp((int)(clip.frequency * lap), 1, totalSamples - 1); ;
+        int lapSamples = (int)(clip.frequency * lap);   // tiempo total en samples (samples totales del fade in)
+        float time = 0;                                 // current time relativo a samples (sample actual)
 
         float[] samples = new float[totalSamples];
         clip.GetData(samples, 0);
-        int time = 0;
        
         for (int i = 0; i < lapSamples; i++)
         {
-            Debug.Log(samples[i]);
-            float t = time / (float)lapSamples;
-            samples[i] = samples[i] * Mathf.Sqrt(t);
-            t++;
-            Debug.Log(samples[i]);
+            samples[i] = samples[i] * Mathf.Sqrt(time);
+            time++;
         }
 
         clip.SetData(samples, 0);
@@ -116,24 +113,23 @@ public class SchedEvent: MonoBehaviour {
     {
         //
         int totalsamples = clip.samples;
-        int lapSamples = Mathf.Clamp((int)(clip.frequency * lap), 1, totalsamples - 1); ;
-
+        int lapSamples = (int)(clip.frequency * lap);   // tiempo total en samples (samples totales del fade out)
+        float time = 0;                                 // current time relativo a samples (sample actual)
 
         float[] samples = new float[totalsamples];
-        clip.GetData(samples, 0);   //Cogemos los samples
-        int time = 0;
+        int offset = samples.Length - lapSamples;
+
+        clip.GetData(samples, offset);   //Cogemos los samples
+
 
         //Aplicamos fadeOut
-        int start = totalsamples - lapSamples;  
-        for (int i = 0; i < lapSamples; i++)
+        for (int i = 0; i < samples.Length; i++)
         {
-            float t = (i + 1) / (float)lapSamples;
-            samples[start + i] = samples[start + i] * Mathf.Sqrt((lapSamples - time)/lapSamples);
+            samples[i] = samples[i] * Mathf.Sqrt((lapSamples - time)/lapSamples);
             time++;
         }
 
-        clip.SetData(samples, 0);
-
+        clip.SetData(samples, offset);
     }
 
 
