@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{8c8a677a-b6b3-45a8-858a-1e1871e556ab}">
+		<property name="assetPath">
+			<value>ambience/lluvia.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>37.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b4e60e84-7b50-4e11-9581-53d970faf7eb}</destination>
+		</relationship>
+	</object>
+</objects>
