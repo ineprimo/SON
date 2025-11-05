@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{564aecad-66e6-42c5-b477-c6b005b35d21}">
+		<property name="name">
+			<value>cinto</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7a3d9191-6f21-44d8-a46e-0639590d3bd2}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{135e20c9-66a9-4ce5-88ce-77c010c9c374}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{135e20c9-66a9-4ce5-88ce-77c010c9c374}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

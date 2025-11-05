@@ -4,6 +4,9 @@
 		<relationship name="projectSettings">
 			<destination>{aa7dc4b9-9791-4606-8216-ca14db119d86}</destination>
 		</relationship>
+		<relationship name="changelist">
+			<destination>{90e70551-eaf2-4151-b097-093d45f39265}</destination>
+		</relationship>
 	</object>
 	<object class="ProjectSettings" id="{aa7dc4b9-9791-4606-8216-ca14db119d86}">
 		<property name="windowLayout">
@@ -13,4 +16,5 @@
 			<destination>{f66ba3a9-1b34-41ce-9cdc-829ff61e6f72}</destination>
 		</relationship>
 	</object>
+	<object class="WorkspaceChangelist" id="{90e70551-eaf2-4151-b097-093d45f39265}" />
 </objects>
