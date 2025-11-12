@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{010f7fb3-2f9b-4d79-9afc-1173f53d3c85}">
+		<property name="assetPath">
+			<value>tormenta/lluvia1.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>60.929160997732424</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b4e60e84-7b50-4e11-9581-53d970faf7eb}</destination>
+		</relationship>
+	</object>
+</objects>

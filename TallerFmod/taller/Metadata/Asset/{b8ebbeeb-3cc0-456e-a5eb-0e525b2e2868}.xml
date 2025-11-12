@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EncodableAsset" id="{b8ebbeeb-3cc0-456e-a5eb-0e525b2e2868}">
+		<property name="assetPath">
+			<value>tormenta/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b4e60e84-7b50-4e11-9581-53d970faf7eb}</destination>
+		</relationship>
+	</object>
+</objects>

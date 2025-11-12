@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{5d65492b-cdf5-49b1-a2c3-b6aa121f94b0}">
 		<property name="name">
-			<value>🌵</value>
+			<value>pájaros🌵</value>
 		</property>
 		<property name="outputFormat">
 			<value>5</value>
@@ -342,7 +342,6 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{d69092a6-b86f-4766-8614-7976e2870863}">
-		<property name="name" />
 		<relationship name="audioFile">
 			<destination>{13921524-3428-4d66-bf4d-57dbf09521cd}</destination>
 		</relationship>

@@ -138,6 +138,8 @@
 		<relationship name="modulators">
 			<destination>{80063e5d-41a9-4da6-aee0-88cc0a440d6f}</destination>
 			<destination>{b46aea76-4c19-4f25-abf3-e821088c0579}</destination>
+			<destination>{9af3ea7a-3fbc-4af1-97b2-33ef3010fb08}</destination>
+			<destination>{a738d285-7bee-460c-ae76-f6a5cf2ed237}</destination>
 		</relationship>
 		<relationship name="triggerConditions">
 			<destination>{6eaaa544-bf66-4197-b6e2-7e0174dbc0c5}</destination>
@@ -343,6 +345,28 @@
 		</property>
 		<property name="amount">
 			<value>4.16666698</value>
+		</property>
+	</object>
+	<object class="ADSRModulator" id="{9af3ea7a-3fbc-4af1-97b2-33ef3010fb08}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="decayTime">
+			<value>865.384644</value>
+		</property>
+		<property name="sustainValue">
+			<value>-28.5714283</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
+	<object class="SidechainModulator" id="{a738d285-7bee-460c-ae76-f6a5cf2ed237}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
 		</property>
 	</object>
 	<object class="ParameterCondition" id="{6eaaa544-bf66-4197-b6e2-7e0174dbc0c5}">
