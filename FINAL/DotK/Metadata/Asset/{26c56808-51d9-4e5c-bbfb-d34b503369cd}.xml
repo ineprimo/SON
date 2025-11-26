@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EncodableAsset" id="{26c56808-51d9-4e5c-bbfb-d34b503369cd}">
+		<property name="assetPath">
+			<value>DotK/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{64f900d5-31e9-4e25-9297-ed9aec656ed2}</destination>
+		</relationship>
+	</object>
+</objects>

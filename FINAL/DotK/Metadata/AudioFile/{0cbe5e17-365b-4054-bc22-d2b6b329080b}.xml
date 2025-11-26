@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{0cbe5e17-365b-4054-bc22-d2b6b329080b}">
+		<property name="assetPath">
+			<value>DotK/DotK tuba.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>96</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{64f900d5-31e9-4e25-9297-ed9aec656ed2}</destination>
+		</relationship>
+	</object>
+</objects>
