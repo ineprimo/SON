@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Workspace" id="{9a80ff0c-8ac8-4f8a-b275-ff45379e4808}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../../Proyecto-Sonido/Proyecto_SON/Content/Fmod</value>
+		</property>
 		<relationship name="masterEventFolder">
 			<destination>{c8978556-a4f1-4390-b6e9-cb3dbcebca36}</destination>
 		</relationship>
