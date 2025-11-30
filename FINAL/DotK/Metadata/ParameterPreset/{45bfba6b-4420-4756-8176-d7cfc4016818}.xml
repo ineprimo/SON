@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{45bfba6b-4420-4756-8176-d7cfc4016818}">
+		<property name="name">
+			<value>Susurros</value>
+		</property>
+		<relationship name="folder">
+			<destination>{3821f315-48d5-4f26-a106-fa0a984f9f7a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{bdfa0fe3-7301-4881-b9dc-be2731150c5d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{bdfa0fe3-7301-4881-b9dc-be2731150c5d}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{44fb9452-b41d-4694-b543-a59a1019bf31}">
+		<property name="assetPath">
+			<value>Ambiente bosque/animalillo.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>11.0249996</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>6.5306122448979593</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{64f900d5-31e9-4e25-9297-ed9aec656ed2}</destination>
+		</relationship>
+	</object>
+</objects>

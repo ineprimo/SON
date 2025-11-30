@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Workspace" id="{7c29baad-3e69-4221-9785-386bf1cc4adc}">
 		<property name="builtBanksOutputDirectory">
-			<value>C:/Users/Ines/Documents/GITHUB/Proyecto-Sonido/Proyecto_SON/Content/FMOD</value>
+			<value>../../../Proyecto-Sonido/Proyecto_SON/Content/Fmod</value>
 		</property>
 		<relationship name="masterEventFolder">
 			<destination>{072ba8c4-dab7-4806-9254-df99c06a7cf0}</destination>

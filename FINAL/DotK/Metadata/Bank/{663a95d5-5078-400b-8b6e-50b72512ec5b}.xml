@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="Bank" id="{663a95d5-5078-400b-8b6e-50b72512ec5b}">
+		<property name="name">
+			<value>tormenta</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f90c988b-9939-40db-baee-b63dc7ece83d}</destination>
+		</relationship>
+	</object>
+</objects>
