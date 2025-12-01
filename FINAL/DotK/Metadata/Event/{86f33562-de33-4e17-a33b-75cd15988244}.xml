@@ -5,7 +5,7 @@
 			<value>DotK Horns Tromb</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{072ba8c4-dab7-4806-9254-df99c06a7cf0}</destination>
@@ -250,7 +250,6 @@
 	<object class="MixerBusEffectChain" id="{03226dfe-e459-4983-9f75-a8e98a091dac}">
 		<relationship name="effects">
 			<destination>{e1122a3c-925f-4ca4-ac1c-060c987c6145}</destination>
-			<destination>{2597afc4-ba0b-4c8a-8d17-3f251e357f4e}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{678aa645-b8c2-4420-bc59-f00e343d9645}" />
@@ -295,6 +294,5 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{e1122a3c-925f-4ca4-ac1c-060c987c6145}" />
-	<object class="SpatialiserEffect" id="{2597afc4-ba0b-4c8a-8d17-3f251e357f4e}" />
 	<object class="MixerBusFader" id="{1cdd04e7-ccce-47ac-b969-527b0303b476}" />
 </objects>

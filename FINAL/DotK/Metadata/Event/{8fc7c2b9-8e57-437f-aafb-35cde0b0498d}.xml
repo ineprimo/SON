@@ -5,7 +5,7 @@
 			<value>DotK Oboe</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{072ba8c4-dab7-4806-9254-df99c06a7cf0}</destination>
@@ -253,7 +253,6 @@
 	<object class="MixerBusEffectChain" id="{82b5344d-a6be-4293-ad53-d9bf3798f39a}">
 		<relationship name="effects">
 			<destination>{43e9c361-b2c6-4c87-a43f-a6325a7d8cb2}</destination>
-			<destination>{db0fd4c3-bead-4bbe-9dba-1c966fadd006}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{747fcf53-dfce-403d-8300-fe2c07cdafba}" />
@@ -298,6 +297,5 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{43e9c361-b2c6-4c87-a43f-a6325a7d8cb2}" />
-	<object class="SpatialiserEffect" id="{db0fd4c3-bead-4bbe-9dba-1c966fadd006}" />
 	<object class="MixerBusFader" id="{00043bdd-a3e3-41c4-9f99-5d30c805f410}" />
 </objects>
